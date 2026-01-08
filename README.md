@@ -29,5 +29,11 @@ The **Online Examination System** is a web-based application that allows student
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Pooja0167/online-examination-system.git
+   git clone https://github.com/Pooja0167/online-examination-system.git cd online-examination-system
+   Database (MySQL)
+   CREATE DATABASE examsite;
+
+Run
+mvn spring-boot:run URL: http://localhost:8080
+📂 Project Structure online-exam-system\main\java\com\example\exam online-examination-system ├── controller/ │   │   │           ├── service/ │   │   │           ├── repository/ │   │   │           ├── model/ │   │   │           └── OnlineExaminationApplication.java │   │   │ │   │   └── resources/ │   │       ├── templates/ │   │       ├── static/ │   │       └── application.properties │   │ │   └── test/ │       └── java/ │ ├── .mvn/ ├── pom.xml ├── mvnw ├── mvnw.cmd ├── README.md └── .gitignore
    
