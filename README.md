@@ -30,7 +30,7 @@ The **Online Examination System** is a web-based application that allows student
 1. Clone the repository:
    ```bash
    git clone https://github.com/Pooja0167/online-examination-system.git cd online-examination-system
-   Database (MySQL)
+  ##  Database (MySQL)
    CREATE DATABASE examsite;
 
 Run
