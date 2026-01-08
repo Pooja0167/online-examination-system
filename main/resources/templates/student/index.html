@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+</head>
+<body>
+<h1>Available Exams</h1>
+<table border="1">
+    <tr>
+        <th>Exam</th>
+        <th>Duration</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="exam : ${exams}">
+        <td th:text="${exam.title}"></td>
+        <td th:text="${exam.duration}"></td>
+        <td><a th:href="@{'/student/exam/' + ${exam.id}}">Start Exam</a></td>
+    </tr>
+</table>
+</body>
+</html>

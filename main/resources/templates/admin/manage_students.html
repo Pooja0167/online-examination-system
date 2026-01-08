@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Manage Questions</title>
+</head>
+<body>
+
+<h2 th:text="'Exam: ' + ${exam.title}"></h2>
+
+<a th:href="@{/admin/add_question/{id}(id=${exam.id})}">
+    Add New Question
+</a>
+
+<br><br>
+
+<table border="1">
+    <tr>
+        <th>Question</th>
+        <th>Correct Answer</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="q : ${questions}">
+        <td th:text="${q.questionText}"></td>
+        <td th:text="${q.correctAnswer}"></td>
+        <td>
+            <a th:href="@{/admin/delete_question/{id}(id=${q.id})}"
+               onclick="return confirm('Delete this question?')">
+                Delete
+            </a>
+        </td>
+    </tr>
+</table>
+
+<br>
+<a th:href="@{/admin/dashboard}">Back to Dashboard</a>
+
+</body>
+</html>
+

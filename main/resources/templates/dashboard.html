@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+<h1>Admin Dashboard</h1>
+<a th:href="@{/admin/add_exam}">Add Exam</a> |
+<a th:href="@{/admin/manage_students}">Manage Students</a>
+<h2>Exams</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Duration</th>
+    </tr>
+    <tr th:each="exam : ${exams}">
+        <td th:text="${exam.id}"></td>
+        <td th:text="${exam.title}"></td>
+        <td th:text="${exam.duration}"></td>
+    </tr>
+</table>
+</body>
+</html>

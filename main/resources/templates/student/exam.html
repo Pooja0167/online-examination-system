@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam</title>
+    <script th:src="@{/js/exam-timer.js}"></script>
+</head>
+<body>
+<h2 th:text="${exam.title}">Exam Title</h2>
+<form th:action="@{'/submit_exam/' + ${exam.id}}" method="post">
+    <div th:each="question, iterStat : ${exam.questions}">
+        <p th:text="${iterStat.index + 1} + '. ' + ${question.questionText}"></p>
+        <label><input type="radio" name="answers" th:value="${question.optionA}" required> <span th:text="${question.optionA}"></span></label><br>
+        <label><input type="radio" name="answers" th:value="${question.optionB}" required> <span th:text="${question.optionB}"></span></label><br>
+        <label><input type="radio" name="answers" th:value="${question.optionC}" required> <span th:text="${question.optionC}"></span></label><br>
+        <label><input type="radio" name="answers" th:value="${question.optionD}" required> <span th:text="${question.optionD}"></span></label><br>
+    </div>
+    <button type="submit">Submit Exam</button>
+</form>
+<div id="timer"></div>
+<script>
+    startTimer([[${exam.duration}]] * 60); // duration in seconds
+</script>
+</body>
+</html>
